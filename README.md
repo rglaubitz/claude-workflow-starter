@@ -4,7 +4,7 @@
 
 Transform your Claude Code experience with a structured 5-phase workflow and C-suite Review Board. This system provides the templates, commands, and scripts to orchestrate professional-grade projects from concept to deployment.
 
-> **Looking for specialist agents?** See [claude-agents](https://github.com/rglaubitz/claude-agents) - 42+ agents to import as needed
+> **Looking for specialist agents?** See [claude-agents](https://github.com/rglaubitz/claude-agents) - 47 agents to import as needed
 >
 > **Architecture details:** See [ARCHITECTURE.md](./ARCHITECTURE.md)
 
@@ -12,7 +12,7 @@ Transform your Claude Code experience with a structured 5-phase workflow and C-s
 
 - **5-Phase Workflow System**: Vision → Mission → Execution Planning → Review Board → Implementation → Testing
 - **3 C-Suite Agents**: CIO, CTO, and COO (Review Board executives)
-- **42+ Specialist Agents**: Import from [claude-agents](https://github.com/rglaubitz/claude-agents) library as needed
+- **47 Specialist Agents**: Import from [claude-agents](https://github.com/rglaubitz/claude-agents) library as needed
 - **20 Slash Commands**: Full workflow orchestration at your fingertips
 - **6 Phase Templates**: Professional documentation from day one
 - **Automation Scripts**: Database initialization, health checks, workflow coordination
@@ -101,19 +101,103 @@ Every project follows a structured path with explicit approval gates:
 
 These 3 C-suite agents are included as they're integral to the Review Board (Phase 3.5) workflow.
 
+### Phase 4 Execution Team (Included) ⭐ **NEW**
+
+**The Professional Implementation Team (5 agents):**
+
+Phase 4 uses a dedicated **Execution Team** with 5 specialists who take over from the Planning Team after Review Board approval. This mirrors professional software teams with field leadership, handoff coordination, quality enforcement, problem solving, and progress tracking.
+
+**execution-director** - Field Commander
+- Orchestrates all tactical execution during Phase 4
+- Commands 7 agent teams (Foundation, Backend, Frontend, Research, Quality, Integration, Orchestration)
+- Makes real-time tactical decisions (priority adjustment, resource reallocation)
+- Receives formal handoff from task-manager at Phase 3→4 transition
+
+**delivery-coordinator** - Handoff Manager
+- Manages all team-to-team handoffs with 10-step protocol
+- Validates handoff packages before confirming transfer
+- Logs all communications to SQLite database
+- Runs daily async standups to sync teams
+- Identifies bottlenecks in coordination
+
+**quality-enforcer** - Gate Keeper with Blocking Authority
+- Enforces quality gates at 4 levels (task, feature, epic, phase)
+- **Has absolute blocking authority** - work cannot progress if gates fail
+- Deploys review agents (code-review-expert, security-auditor, etc.)
+- Creates remediation tasks for failed checks
+- Validates SOP compliance across all teams
+
+**blocker-resolver** - 5-Level Escalation Problem Solver
+- Rapid blocker resolution with escalation protocol
+- L1 (agent 0-1h) → L2 (resolver 1-4h) → L3 (specialist 4-8h) → L4 (director 8+h) → L5 (critical path/plan revision)
+- Pattern-based resolution system (learns from past blockers)
+- Proactive blocker detection before critical path impact
+- Deploys specialist agents at L3 (database-architect, devops-engineer, etc.)
+
+**progress-tracker** - War Room Dashboard & Metrics
+- Maintains real-time war room dashboard (updated hourly)
+- Tracks 6 KPIs: tasks on-time %, gate pass rate, blocker resolution time, code review TAT, utilization %, handoff success rate
+- Generates daily/weekly status reports
+- Calculates buffer consumption and critical path health
+- Alert system for timeline/quality risks
+
+**Handoff Protocol:**
+
+When Review Board approves the execution plan, task-manager orchestrates a formal handoff meeting:
+
+**Attendees**: project-task-planner, task-manager → execution-director, delivery-coordinator, quality-enforcer
+
+**9-Point Handoff Agenda**:
+1. Execution plan walkthrough
+2. Agent team assignments (all 7 teams confirmed)
+3. Critical path review
+4. Quality gate criteria
+5. Communication protocol (TodoWrite + SQLite)
+6. Blocker escalation paths (5-level)
+7. Success criteria alignment
+8. Formal handoff acceptance
+9. Phase 4 kickoff authorization
+
+**Communication Infrastructure:**
+
+Initialize the Phase 4 SQLite communication schema:
+
+```bash
+python3 ~/.claude/scripts/execution-coordinator.py init <project-name>
+```
+
+This creates 10 tables:
+- `agent_messages` - Inter-agent communication
+- `handoff_log` - Team handoffs with confirmation
+- `quality_gates` - Gate enforcement tracking
+- `sop_compliance` - SOP violation tracking
+- `blockers` - Blocker tracking and resolution
+- `blocker_patterns` - Learning from resolutions
+- `team_status` - 7 teams initialized with capacity
+- `review_deployments` - Review agent tracking
+- `team_sync_log` - Daily standups
+- `tactical_decisions` - execution-director decisions
+
+**Health Check:**
+```bash
+python3 ~/.claude/scripts/execution-coordinator.py health <project-name>
+```
+
+These 5 execution agents are included in the workflow-starter as they're integral to Phase 4 implementation.
+
 ### Specialist Agents (Import from Library)
 
-**42+ specialist agents** are available in the [claude-agents](https://github.com/rglaubitz/claude-agents) library. During Phase 3 (Execution Planning), you'll identify which agents your project needs and import them.
+**47 specialist agents** are available in the [claude-agents](https://github.com/rglaubitz/claude-agents) library. During Phase 3 (Execution Planning), you'll identify which agents your project needs and import them.
 
 **Agent Categories:**
-- **Orchestration (4):** task-manager, project-task-planner, prd-expert, agent-architecture-designer
+- **Orchestration (9) ⭐ EXPANDED:** Planning Team (task-manager, project-task-planner, prd-expert, agent-architecture-designer) + Execution Team (execution-director, delivery-coordinator, quality-enforcer, blocker-resolver, progress-tracker)
 - **Development (6):** database-architect, graph-database-specialist, ai-ml-engineer, frontend-developer, backend-developer, devops-engineer
 - **Quality (4):** security-auditor, performance-engineer, accessibility-specialist, qa-engineer
 - **Research (17):** research-manager, deep-researcher, documentation-expert, + 14 specialists ⭐
 - **Review (4):** code-review-expert, database-reviewer, frontend-reviewer, backend-reviewer
 - **Support (7):** api-architect, ui-ux-designer, data-pipeline-engineer, knowledge-graph-engineer, sql-specialist, integration-specialist, mcp-bridge-engineer
 
-**You don't need all 42** - import only what your project requires.
+**You don't need all 47** - import only what your project requires.
 
 **Example:** Web app might need:
 ```bash
@@ -236,6 +320,7 @@ After installation, your `~/.claude/` directory will contain:
 │   ├── setup.sh
 │   ├── workflow-coordinator.py
 │   ├── review-board-coordinator.py
+│   ├── execution-coordinator.py
 │   └── init-project-database.py
 │
 ├── constitution/          # Agent governance
