@@ -1,0 +1,62 @@
+# Claude Code Runtime Data (not included in starter kit)
+logs/
+backups/
+file-history/
+shell-snapshots/
+statsig/
+todos/
+ide/
+history.jsonl
+
+# Project-specific data (created at runtime)
+projects/*/workflow.db
+projects/*/research/
+projects/*/examples/
+projects/*/review/
+projects/*/agent-notes/
+projects/*/review-board/
+projects/*/*.md
+!projects/*/00-project-brief-template.md
+
+# Configuration (use .example files)
+.mcp.json
+settings.json
+settings.local.json
+claude_desktop_config.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+venv/
+env/
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Secrets
+*.key
+*.pem
+*.env
+.env.local
+credentials.json
+secrets.json

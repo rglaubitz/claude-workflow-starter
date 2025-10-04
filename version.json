@@ -1,0 +1,117 @@
+{
+  "version": "3.1.0",
+  "lastUpdated": "2025-10-01",
+  "description": "Workflow restructure - Explicit approval gates and project-specific databases",
+  "changes": [
+    {
+      "version": "3.1.0",
+      "date": "2025-10-01",
+      "type": "minor",
+      "description": "Workflow restructure with explicit approval gates",
+      "changes": [
+        "Added 3 new C-suite executive agents (CIO, CTO, COO) for Review Board",
+        "Created 14 new phase-specific commands with explicit approval workflow",
+        "Reorganized templates into phases/, supporting/, review-board/ structure",
+        "Created user-friendly project brief template (Phase 0)",
+        "Added Phase 3.5: Review Board as quality gate before implementation",
+        "Implemented project-specific databases (isolated per project)",
+        "Created init-project-database.py for fresh database per project",
+        "Added 04-implementation-report-template.md (Phase 4 deliverable)",
+        "Updated phase-status command with Review Board tracking",
+        "Updated workflow-dashboard to show all 6 phases (incl Review Board)",
+        "Commands: /start-vision, /approve-vision, /start-mission, /approve-mission, etc.",
+        "Loop-back mechanism: /address-review-concerns returns to Phase 3",
+        "Each phase requires explicit user approval before progression",
+        "Total agents increased from 29 to 32 (29 + 3 C-suite)"
+      ]
+    },
+    {
+      "version": "3.0.0",
+      "date": "2025-10-01",
+      "type": "major",
+      "description": "Portable config restructure with agent library separation",
+      "changes": [
+        "Moved all 29 agents to separate claude-agents repository",
+        "Streamlined review committee to 3 executives (CIO, CTO, COO)",
+        "Removed 147MB of bloat (backups, logs, file-history, etc.)",
+        "Consolidated 5 documentation files into README",
+        "Streamlined CLAUDE.md to <7KB (was 10KB)",
+        "Reduced scripts from 11 to 6 essential",
+        "Created .example config templates (no secrets)",
+        "Removed redundant documentation",
+        "Constitution system kept and integrated",
+        "5-phase workflow intact with review gate",
+        "Size reduced from 314MB to ~2MB (99% reduction)"
+      ]
+    },
+    {
+      "version": "2.1.0",
+      "date": "2025-09-27",
+      "type": "minor",
+      "description": "Final cleanup - removed disconnected components",
+      "changes": [
+        "Deleted 9 unnecessary directories",
+        "Consolidated memory files into CLAUDE.md",
+        "Added power questions to Key Principles"
+      ]
+    },
+    {
+      "version": "2.0.0",
+      "date": "2025-09-27",
+      "type": "major",
+      "description": "Complete system reorganization and cleanup",
+      "changes": [
+        "Removed Airflow automation",
+        "Fixed webhook handlers",
+        "Added agent runner infrastructure",
+        "Implemented automated backup with rotation"
+      ]
+    }
+  ],
+  "components": {
+    "core": {
+      "version": "3.1.0",
+      "status": "active"
+    },
+    "agents": {
+      "version": "1.1.0",
+      "status": "active",
+      "location": "agents/",
+      "count": 32,
+      "executives": ["CIO", "CTO", "COO"]
+    },
+    "constitution": {
+      "version": "1.0.0",
+      "status": "active",
+      "integrated": true
+    },
+    "workflow": {
+      "version": "2.0.0",
+      "status": "active",
+      "phases": 6,
+      "review_board": true,
+      "project_databases": true,
+      "explicit_approvals": true
+    },
+    "review-board": {
+      "version": "3.0.0",
+      "status": "active",
+      "executives": 3,
+      "model": "CIO-CTO-COO",
+      "phase": "3.5",
+      "verdicts": ["APPROVED", "APPROVED_WITH_CONCERNS", "REJECTED"]
+    },
+    "templates": {
+      "version": "2.0.0",
+      "status": "active",
+      "structure": "reorganized",
+      "directories": ["phases", "supporting", "review-board"]
+    },
+    "commands": {
+      "version": "2.0.0",
+      "status": "active",
+      "count": 19,
+      "phase_specific": 14
+    }
+  }
+}

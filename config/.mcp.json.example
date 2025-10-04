@@ -1,0 +1,32 @@
+{
+  "mcpServers": {
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "description": "Persistent memory with knowledge graph for cross-session context"
+    },
+    "sqlite-knowledge": {
+      "command": "uvx",
+      "args": ["mcp-server-sqlite", "--db-path", "~/.claude/data/shared-knowledge.db"],
+      "description": "Shared knowledge base for inter-agent communication"
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "description": "Extended reasoning for complex problems"
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "context7"],
+      "description": "Documentation lookup and code search"
+    },
+    "exa": {
+      "command": "npx",
+      "args": ["-y", "@exa/mcp-server"],
+      "description": "AI-powered semantic web search",
+      "env": {
+        "EXA_API_KEY": "<your-exa-api-key-here>"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "codeEditor": "cursor",
+  "terminalEmulator": "default",
+  "theme": "dark",
+  "notifications": {
+    "enabled": true,
+    "sound": false
+  },
+  "workflow": {
+    "autoBackup": true,
+    "backupInterval": "daily"
+  },
+  "agents": {
+    "maxParallel": 5,
+    "timeout": 300,
+    "constitutionEnabled": true
+  },
+  "review": {
+    "autoTrigger": false,
+    "executives": ["CIO", "CTO", "COO"]
+  }
+}
