@@ -1,7 +1,7 @@
 # The Vision: [Project Name]
 
 **Created:** [Date]
-**Phase:** 1 - Vision
+**Phase:** 1 - Vision (Strategic Synthesis)
 **Status:** Draft
 
 ---
@@ -14,129 +14,159 @@
 ---
 
 ## Executive Summary
-<!-- 2-3 sentences capturing the essence of this project -->
+
+<!-- 2-3 sentences that capture the essence: WHAT we're building, WHO it serves, and the TRANSFORMATIVE outcome -->
 
 
-## Problem Statement
 
-### Current Situation
-<!-- What problem exists today? Who is affected? -->
+---
 
+## From the Project Brief
 
-### Pain Points
-<!-- Specific challenges and frustrations -->
+**Quick Reference** (See [[00-project-brief]] for full details):
+- **What:** [One-line description from brief]
+- **Who:** [Target users from brief]
+- **Must-Haves:** [Top 3 from brief]
+- **Key Constraint:** [Most critical constraint]
+- **Success Metric:** [Primary success definition]
 
+---
 
-### Impact
-<!-- Cost of not solving this problem -->
+## Strategic Solution Approach
 
+### The HOW: Technical Architecture
 
-## Proposed Solution
-
-### Core Concept
-<!-- The fundamental idea - what are we building? -->
-
-
-### Key Innovation
-<!-- What makes this approach unique or better? -->
+<!-- How will we solve this problem? What's the technical approach? -->
+<!-- Focus on: Architecture, core technology choices, system design -->
 
 
-### Value Proposition
-<!-- Why is this worth doing? What value does it create? -->
+
+### Innovation & Differentiation
+
+<!-- What makes THIS approach unique/better than alternatives? -->
+<!-- What's the key innovation or insight that makes this work? -->
 
 
-## Success Criteria
 
-### Primary Goals
+### Why This Approach Wins
+
+<!-- Strategic justification: Why is this the RIGHT way to solve it? -->
+<!-- Consider: Feasibility, scalability, user experience, market fit -->
+
+
+
+---
+
+## The Explosive Outcome
+
+### When We Nail This...
+
+<!-- Paint the picture of success. What changes for users? For the world? -->
+<!-- Be specific and inspiring. Make it REAL. -->
+
+**Users will:**
+-
+-
+-
+
+**We will have:**
+-
+-
+-
+
+**The world will:**
+-
+-
+
+### Impact Metrics
+
+<!-- How will we KNOW we've achieved the explosive outcome? -->
+
+| Impact Area | Metric | Target | Timeline |
+|-------------|--------|--------|----------|
+|             |        |        |          |
+
+---
+
+## Strategic Decisions
+
+### Key Architectural Choices
+
+<!-- What are the 3-5 most important technical/design decisions? -->
+
+**Decision 1: [Name]**
+- **Choice:**
+- **Rationale:**
+- **Trade-offs:**
+
+**Decision 2: [Name]**
+- **Choice:**
+- **Rationale:**
+- **Trade-offs:**
+
+**Decision 3: [Name]**
+- **Choice:**
+- **Rationale:**
+- **Trade-offs:**
+
+### What We're NOT Doing (And Why)
+
+<!-- Explicit scope boundaries - prevents mission creep -->
+
+- **NOT:** [Thing] | **Because:** [Reason]
+- **NOT:** [Thing] | **Because:** [Reason]
+
+---
+
+## The Path Forward
+
+### Immediate Next Steps (Phase 2: Mission)
+
+**Research Requirements:**
 1.
 2.
 3.
 
-### Key Results (Measurable)
-<!-- How will we know we succeeded? -->
+**Documentation to Gather:**
+-
+-
 
-| Metric | Target | Timeline |
-|--------|--------|----------|
-|        |        |          |
+**Examples to Find:**
+-
+-
 
-### Constraints
-<!-- What limitations must we work within? -->
+**Dependencies to Identify:**
+-
+-
 
-- Budget:
-- Timeline:
-- Technical:
-- Resources:
+### Success Criteria for Vision
 
-## Stakeholders
-
-### Primary Stakeholders
-<!-- Who has the most at stake? -->
-
-| Stakeholder | Role | Interest | Influence |
-|-------------|------|----------|-----------|
-|             |      |          |           |
-
-### User Personas
-<!-- Who will use this? -->
-
-
-## High-Level Requirements
-
-### Must Have
-<!-- Non-negotiable requirements -->
-
-- [ ]
-- [ ]
-
-### Should Have
-<!-- Important but not critical -->
-
-- [ ]
-- [ ]
-
-### Nice to Have
-<!-- Future enhancements -->
-
-- [ ]
-- [ ]
-
-## Risks & Assumptions
-
-### Key Assumptions
-1.
-2.
-
-### Known Risks
-<!-- What could go wrong? -->
-
-| Risk | Probability | Impact | Mitigation |
-|------|-------------|--------|------------|
-|      |             |        |            |
-
-## Next Steps
-
-**Upon Vision Approval:**
-1. Proceed to Phase 2: Research & Mission Definition
-2. Activate: **Research Division** (15-agent research team)
-   - Strategic: research-manager
-   - Coordinator: research-coordinator
-   - 4 Specialist Teams: Documentation (3), Code Examples (3), Market Intelligence (3), Deep Research (3)
-3. Generate "The Mission" document with comprehensive research
-4. Gather research in [[research/README|research folder]] following quality standards
-5. Collect examples in [[examples/README|examples folder]] (1.5k+ star repos only)
+**This vision is approved when:**
+- [ ] Executive summary clearly communicates the transformative outcome
+- [ ] Strategic approach is compelling and technically sound
+- [ ] Innovation/differentiation is clear and defensible
+- [ ] Explosive outcome is specific and inspiring
+- [ ] Key decisions are justified with trade-offs understood
+- [ ] Scope boundaries are explicit
+- [ ] User is excited to build this
 
 ---
 
 ## Review & Approval
 
-**Vision Author:** Claude Code (prd-expert, agent-architecture-designer)
+**Vision Architects:** Claude Code (prd-expert, agent-architecture-designer, ui-ux-designer)
 **Review Status:** [[review/review-checklist#phase-1|⏳ Pending User Review]]
 **User Feedback:** [[review/feedback#phase-1|Add feedback here]]
-**Approval Date:**
+**Approval Command:** `/approve-vision`
 
 ---
 
 **Related Documents:**
-- [[00-project-brief|Project Brief]] - Original requirements
-- [[02-mission|Mission Document]] - Technical approach (Phase 2)
+- [[00-project-brief|Project Brief]] - Original requirements and context
+- [[02-mission|Mission Document]] - Technical research (Phase 2, after approval)
 - [[review/review-checklist|Review Checklist]] - Approval tracking
+
+---
+
+*This vision is a strategic synthesis, not a requirements document.*
+*For requirements, constraints, and detailed specifications, see the Project Brief.*
