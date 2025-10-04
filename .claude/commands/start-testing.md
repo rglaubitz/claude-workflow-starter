@@ -7,6 +7,14 @@ allowed-tools: Task, Bash, Write, Read
 
 You are initiating **Phase 5: Testing** - the validation phase.
 
+## Phase 5 MCP Profile
+
+```bash
+echo "🧪 Keeping code-work profile for Phase 5 (test analysis)..."
+# Already active from Phase 4, no change needed
+# Could switch to minimal for speed if preferred
+```
+
 ## Prerequisites Check
 
 1. **Verify Implementation is complete**:

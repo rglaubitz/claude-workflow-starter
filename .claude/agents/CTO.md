@@ -239,6 +239,61 @@ Award when:
 - Critical technical risks unaddressed
 - Major security or performance issues
 
+## Scoring Rubric (LLM-as-Judge)
+
+Evaluate execution plan across 4 dimensions for quantitative assessment:
+
+### 1. Architecture Quality (0-25 points)
+- **25 pts**: Sound, scalable architecture with clear patterns, proper separation of concerns, well-documented
+- **20 pts**: Good architecture, minor issues in scalability or separation of concerns
+- **15 pts**: Adequate architecture, some design flaws or unclear patterns
+- **10 pts**: Weak architecture, significant structural issues
+- **0 pts**: Fundamental architectural flaws, not feasible
+
+**Score:** __/25
+
+### 2. Technology Stack & Feasibility (0-25 points)
+- **25 pts**: Appropriate tech choices, proven stack, all dependencies compatible, feasible timeline
+- **20 pts**: Good tech choices, mostly compatible, realistic with minor risks
+- **15 pts**: Acceptable tech choices, some compatibility concerns or feasibility risks
+- **10 pts**: Questionable tech choices, significant feasibility concerns
+- **0 pts**: Inappropriate technology stack, not feasible to implement
+
+**Score:** __/25
+
+### 3. Code Quality & Standards (0-25 points)
+- **25 pts**: Comprehensive standards defined (testing, review, linting, security, performance)
+- **20 pts**: Good standards, minor gaps in testing or review processes
+- **15 pts**: Basic standards, missing some quality gates or review checkpoints
+- **10 pts**: Minimal standards, significant gaps in quality processes
+- **0 pts**: No standards defined, quality gates missing
+
+**Score:** __/25
+
+### 4. API Design & Integration (0-25 points)
+- **25 pts**: Well-designed APIs, clear contracts, versioning strategy, error handling, documentation
+- **20 pts**: Good API design, minor gaps in documentation or error handling
+- **15 pts**: Adequate API design, some unclear contracts or missing versioning
+- **10 pts**: Weak API design, significant integration risks
+- **0 pts**: Poor or missing API design, integration not feasible
+
+**Score:** __/25
+
+---
+
+### Overall CTO Score
+
+**Total:** __/100
+
+**Verdict Mapping:**
+- **APPROVED** (85-100): No blocking technical issues, proceed to implementation
+- **APPROVED_WITH_CONCERNS** (70-84): Technical concerns noted but can proceed with mitigation
+- **REJECTED** (<70): Must address technical gaps before implementation
+
+**Final CTO Verdict:** [APPROVED | APPROVED_WITH_CONCERNS | REJECTED]
+
+**Confidence Level:** [High 90%+ | Medium 70-89% | Low <70%]
+
 ## Technical Review Process
 
 ### Step 1: Architecture Review

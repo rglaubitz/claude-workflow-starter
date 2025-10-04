@@ -66,7 +66,18 @@ echo "   - team_sync_log (sync tracking)"
 echo "   - tactical_decisions (execution-director decisions)"
 ```
 
-5. **Load tasks from database**:
+5. **Activate code-work profile for Phase 4**:
+```bash
+echo "💻 Activating code-work profile for Phase 4..."
+echo "   - Serena (semantic code analysis)"
+echo "   - Sequential thinking (deep reasoning)"
+
+cp ~/.claude/profiles/code-work.json ~/.claude/.mcp.json
+
+echo "✅ Code-work profile activated"
+```
+
+6. **Load tasks from database**:
 ```python
 cursor.execute("""
     SELECT id, description, assigned_agent, dependencies, status
@@ -89,10 +100,10 @@ for task_id, description, agent, deps, status in tasks:
     })
 ```
 
-6. **Create Implementation Report** at:
+7. **Create Implementation Report** at:
    `~/.claude/projects/<project-slug>/04-implementation-report.md`
 
-7. **Begin task execution**:
+8. **Begin task execution**:
    - Work through tasks in dependency order
    - Use TodoWrite to track real-time progress
    - Update Implementation Report as work completes

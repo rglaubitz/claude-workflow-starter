@@ -241,6 +241,61 @@ Award when:
 - Timeline is impossible
 - Major operational risks unaddressed
 
+## Scoring Rubric (LLM-as-Judge)
+
+Evaluate execution plan across 4 dimensions for quantitative assessment:
+
+### 1. Goal Achievement Capacity (0-25 points)
+- **25 pts**: All Vision goals will be achieved, clear path to success, metrics defined
+- **20 pts**: Most goals achievable, minor risk to some nice-to-have features
+- **15 pts**: Core goals achievable, significant risk to secondary goals
+- **10 pts**: Major risk to achieving primary goals, unclear success path
+- **0 pts**: Vision goals cannot be achieved with current plan
+
+**Score:** __/25
+
+### 2. Execution Feasibility & Resources (0-25 points)
+- **25 pts**: Plan is realistic, resources adequate, timeline achievable, agent capacity appropriate
+- **20 pts**: Plan mostly feasible, adequate resources, timeline tight but doable
+- **15 pts**: Plan ambitious, resource constraints present, timeline at risk
+- **10 pts**: Plan overly ambitious, insufficient resources or unrealistic timeline
+- **0 pts**: Plan not executable with available resources and timeline
+
+**Score:** __/25
+
+### 3. UX/UI Quality & Usability (0-25 points)
+- **25 pts**: Exceptional UX design, intuitive interface, user-centered, accessibility considered
+- **20 pts**: Good UX design, mostly intuitive, minor usability improvements needed
+- **15 pts**: Adequate UX, some usability concerns, accessibility gaps
+- **10 pts**: Poor UX design, significant usability issues
+- **0 pts**: UX design missing or fundamentally flawed, users won't use it
+
+**Score:** __/25
+
+### 4. Beauty, Polish & User Delight (0-25 points)
+- **25 pts**: Beautiful design, polished interactions, delightful details, will inspire users
+- **20 pts**: Good aesthetics, mostly polished, some delight factors present
+- **15 pts**: Acceptable appearance, basic polish, lacks inspiring elements
+- **10 pts**: Minimal attention to beauty, unpolished, purely functional
+- **0 pts**: No consideration for aesthetics or polish, users will be disappointed
+
+**Score:** __/25
+
+---
+
+### Overall COO Score
+
+**Total:** __/100
+
+**Verdict Mapping:**
+- **APPROVED** (85-100): No blocking operational issues, proceed to implementation
+- **APPROVED_WITH_CONCERNS** (70-84): Operational concerns noted but can proceed with mitigation
+- **REJECTED** (<70): Must address operational gaps before implementation
+
+**Final COO Verdict:** [APPROVED | APPROVED_WITH_CONCERNS | REJECTED]
+
+**Confidence Level:** [High 90%+ | Medium 70-89% | Low <70%]
+
 ## Operational Review Process
 
 ### Step 1: Vision Alignment Check

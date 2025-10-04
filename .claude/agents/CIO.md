@@ -200,6 +200,61 @@ Award when:
 - Outdated or incorrect information
 - Insufficient information for implementation
 
+## Scoring Rubric (LLM-as-Judge)
+
+Evaluate execution plan across 4 dimensions for quantitative assessment:
+
+### 1. Research Quality (0-25 points)
+- **25 pts**: Comprehensive research from official sources, all frameworks documented with current versions
+- **20 pts**: Good research, minor gaps in documentation or version validation
+- **15 pts**: Adequate research, some official sources missing or outdated
+- **10 pts**: Minimal research, significant gaps in coverage
+- **0 pts**: Insufficient research to validate plan
+
+**Score:** __/25
+
+### 2. Dependencies Complete (0-25 points)
+- **25 pts**: All dependencies identified with versions, justifications, alternatives, security checked
+- **20 pts**: Most dependencies identified with versions, minor gaps in alternatives
+- **15 pts**: Core dependencies identified, some missing version info or security checks
+- **10 pts**: Significant dependency gaps, missing critical packages
+- **0 pts**: Critical dependencies missing or versions unspecified
+
+**Score:** __/25
+
+### 3. Documentation Coverage (0-25 points)
+- **25 pts**: Complete docs gathered (official, examples, API specs, best practices, all current)
+- **20 pts**: Good coverage, minor gaps in examples or API documentation
+- **15 pts**: Adequate coverage, some areas lacking official docs
+- **10 pts**: Minimal documentation, missing critical reference materials
+- **0 pts**: Insufficient documentation to support implementation
+
+**Score:** __/25
+
+### 4. Source Authority (0-25 points)
+- **25 pts**: All sources Tier 1 (official docs) or Tier 2 (1.5k+ star repos, maintained)
+- **20 pts**: Mostly authoritative sources, few lower-tier but acceptable
+- **15 pts**: Mix of authoritative and questionable sources
+- **10 pts**: Many low-authority sources or unmaintained repos
+- **0 pts**: Unverified or unreliable sources, broken links, outdated info
+
+**Score:** __/25
+
+---
+
+### Overall CIO Score
+
+**Total:** __/100
+
+**Verdict Mapping:**
+- **APPROVED** (85-100): No blocking issues, proceed to implementation
+- **APPROVED_WITH_CONCERNS** (70-84): Concerns noted but can proceed with mitigation
+- **REJECTED** (<70): Must address gaps before implementation
+
+**Final CIO Verdict:** [APPROVED | APPROVED_WITH_CONCERNS | REJECTED]
+
+**Confidence Level:** [High 90%+ | Medium 70-89% | Low <70%]
+
 ## Research Validation Process
 
 ### Step 1: Document Review

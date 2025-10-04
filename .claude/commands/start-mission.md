@@ -7,6 +7,23 @@ allowed-tools: Task, Bash, Write, Read
 
 You are initiating **Phase 2: Mission** of the 5-phase workflow.
 
+## Phase 2 MCP Profile
+
+This phase requires advanced research capabilities. Automatically activating research-pro profile.
+
+```bash
+echo "🔬 Activating research-pro profile for Phase 2..."
+echo "   - Exa (semantic search)"
+echo "   - Firecrawl (web scraping)"
+echo "   - Context7 (documentation lookup)"
+echo "   - mcpdocsearch (doc search)"
+echo "   - chrome-devtools (browser automation)"
+
+cp ~/.claude/profiles/research-pro.json ~/.claude/.mcp.json
+
+echo "✅ Research profile activated"
+```
+
 ## Prerequisites Check
 
 1. **Verify Phase 1 is approved**:
