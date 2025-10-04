@@ -136,14 +136,31 @@ Every Claude Code project follows a structured workflow from idea to deployment 
 
 ### Phase 4: Implementation (Build It)
 **Purpose:** Execute the approved plan
-**Primary Agent:** task-manager (orchestrator)
+**Primary Agents:** execution-director (field commander) + 4 execution support agents
 **Deliverable:** `04-implementation-report.md`
+
+**Execution Team:**
+- **execution-director**: Tactical orchestration, commands 7 agent teams
+- **delivery-coordinator**: Team handoffs via 10-step protocol
+- **quality-enforcer**: Gate enforcement with blocking authority
+- **blocker-resolver**: 5-level escalation (L1→L5)
+- **progress-tracker**: War room dashboard, tracks 6 KPIs
+
+**Handoff:** Formal Phase 3→4 handoff from task-manager to execution-director
+
+**Communication Infrastructure:**
+- **TodoWrite**: Real-time task broadcasting
+- **SQLite**: 10 tables (agent_messages, handoff_log, quality_gates, sop_compliance, blockers, etc.)
+- **Initialize**: `python3 ~/.claude/scripts/execution-coordinator.py init <project-name>`
+
 **Activities:**
 - Execute all tasks from Execution Plan
 - Deploy specialized agents as assigned
-- Track real-time progress with TodoWrite
+- Track real-time progress with war room dashboard (hourly updates)
+- Enforce quality gates at 4 levels (task/feature/epic/phase)
+- Resolve blockers via escalation protocol
 - Code review as work completes
-- Handle blockers and adapt
+
 **Commands:** `/start-implementation` → `/complete-implementation`
 
 ### Phase 5: Testing (Validation → Quality Gates)
@@ -165,18 +182,32 @@ Every Claude Code project follows a structured workflow from idea to deployment 
 - **Review Board:** `~/.claude/agents/CIO.md`, `CTO.md`, `COO.md`
 - **Coordinator:** `~/.claude/scripts/review-board-coordinator.py`
 
-## Agent Roster (32 Specialists)
+## Agent Roster (47 Specialists Available)
+
+**8 agents included in workflow-starter** (3 C-suite + 5 execution team)
+**39+ specialists available** in [claude-agents](https://github.com/rglaubitz/claude-agents) library
 
 ### Executive Leadership (3 C-suite) **NEW**
 - **CIO**: Chief Information Officer - Reviews intelligence, research quality, dependencies, documentation
 - **CTO**: Chief Technology Officer - Reviews technical architecture, code quality, APIs, feasibility
 - **COO**: Chief Operations Officer - Reviews operations, goal achievement, UX/UI, beauty, execution capacity
 
-### Orchestration & Planning (4 agents)
-- **task-manager**: Director of execution, workflow orchestration
+### Orchestration & Planning (9 agents) ⭐ EXPANDED
+
+**Planning Team (Phase 3) - 4 agents:**
+- **task-manager**: Strategic planning coordinator (Phase 3 only)
 - **project-task-planner**: Task breakdown, dependency mapping
 - **prd-expert**: PRD creation, requirements specification
 - **agent-architecture-designer**: Multi-agent system design
+
+**Execution Team (Phase 4) - 5 agents:**
+- **execution-director**: Field commander, tactical orchestration
+- **delivery-coordinator**: Handoff manager, team synchronization
+- **quality-enforcer**: Gate keeper with blocking authority
+- **blocker-resolver**: 5-level escalation problem solver
+- **progress-tracker**: War room dashboard and metrics
+
+**Note:** Execution team agents available in claude-agents library. Import during Phase 3 planning.
 
 ### Core Development (6 agents)
 - **database-architect**: Schema design, database optimization

@@ -162,7 +162,7 @@ The 6-Phase Project Workflow System provides a structured approach to building p
 
 **Primary Agents:**
 - `project-task-planner` - Break work into tasks
-- `task-manager` - Assign roles and orchestrate
+- `task-manager` - Strategic planning coordinator (Phase 3 only)
 
 **Support Agents:**
 - `agent-architecture-designer` - Validate architecture
@@ -278,13 +278,62 @@ The 6-Phase Project Workflow System provides a structured approach to building p
 
 ---
 
+### Phase 3→4 Handoff Protocol 🤝
+**Formal Transition from Planning to Execution**
+
+**Handoff Meeting** (9-point agenda):
+1. Execution plan walkthrough
+2. Agent team assignments (7 teams)
+3. Critical path review
+4. Quality gate criteria
+5. Communication protocol (TodoWrite + SQLite)
+6. Blocker escalation paths (5-level)
+7. Success criteria alignment
+8. Formal handoff acceptance
+9. Phase 4 kickoff authorization
+
+**Attendees:**
+- **FROM Planning Team**: project-task-planner, task-manager
+- **TO Execution Team**: execution-director, delivery-coordinator, quality-enforcer
+
+**Handoff Package Includes:**
+- Complete execution plan (03-execution-plan.md)
+- 7 agent teams identified
+- 4 dependency types mapped (technical, information, resource, team)
+- Quality gates defined at all levels
+- Review Board approval documented
+- Execution readiness verified
+
+**Communication Infrastructure Initialization:**
+```bash
+python3 ~/.claude/scripts/execution-coordinator.py init <project-name>
+```
+
+Creates 10 SQLite tables:
+- `agent_messages` - Inter-agent communication
+- `handoff_log` - Team handoffs with confirmation
+- `quality_gates` - Gate enforcement tracking
+- `sop_compliance` - SOP violation tracking
+- `blockers` - Blocker tracking and resolution
+- `blocker_patterns` - Learning from resolutions
+- `team_status` - 7 teams initialized with capacity
+- `review_deployments` - Review agent tracking
+- `team_sync_log` - Daily standups
+- `tactical_decisions` - execution-director decisions
+
+---
+
 ### Phase 4: Execute ⚡
 **Implementation**
 
 **Purpose:** Build the project according to the plan.
 
-**Primary Agent:**
-- `task-manager` - Orchestrates entire execution
+**Execution Team (5 agents):**
+- **execution-director** - Field commander, orchestrates 7 agent teams
+- **delivery-coordinator** - Manages all team handoffs via 10-step protocol
+- **quality-enforcer** - Enforces quality gates with blocking authority
+- **blocker-resolver** - Resolves blockers via 5-level escalation
+- **progress-tracker** - Maintains war room dashboard, tracks 6 KPIs
 
 **All Agents Available:**
 - Deploy based on task assignments from Execution document
@@ -351,9 +400,13 @@ The 6-Phase Project Workflow System provides a structured approach to building p
 ```
 
 **Progress Tracking:**
-- Use TodoWrite for task status
-- Update task status in workflow database
-- Regular check-ins with task-manager
+- Real-time coordination via execution-director
+- War room dashboard updated hourly (progress-tracker)
+- Quality gates enforced at all levels (quality-enforcer)
+- Blockers resolved via 5-level escalation (blocker-resolver)
+- Team handoffs managed by delivery-coordinator
+- TodoWrite for task broadcasting
+- SQLite database for persistent communication
 - Update implementation report continuously
 
 **Completion Criteria:**
@@ -709,10 +762,12 @@ python3 workflow-coordinator.py transition <workflow-id>
 - Version control in Git (everything in `~/.claude/`)
 
 ### Agent Coordination
-- Let task-manager orchestrate Phase 4
+- task-manager handles strategic planning (Phase 3)
+- execution-director orchestrates tactical execution (Phase 4)
+- Formal handoff ensures complete context transfer
 - Trust agent specializations
-- Clear handoff protocols
-- Regular status updates
+- Clear handoff protocols via delivery-coordinator
+- Regular status updates via war room dashboard
 
 ### Quality
 - Don't skip quality gates
@@ -745,7 +800,8 @@ python3 workflow-coordinator.py transition <workflow-id>
 ### Agent not activating
 - Verify agent exists: `python3 ~/.claude/scripts/agent-runner.py list`
 - Check phase-agent mapping above
-- Task-manager handles orchestration in Phase 4
+- execution-director handles orchestration in Phase 4
+- Initialize communication infrastructure: `python3 ~/.claude/scripts/execution-coordinator.py init <project-name>`
 
 ### Database errors
 - Verify database: `ls -la ~/.claude/data/workflow.db`
