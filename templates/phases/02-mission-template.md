@@ -269,7 +269,8 @@ See [[examples/README|Examples Folder]] for:
 
 ## Review & Approval
 
-**Mission Author:** Claude Code (research-manager, documentation-expert, specialists)
+**Mission Author:** Research Division (research-manager → research-coordinator → 12 specialists across 4 teams)
+**Research Standards:** templates/research-quality-standards.md
 **Review Status:** [[review/review-checklist#phase-2|⏳ Pending User Review]]
 **User Feedback:** [[review/feedback#phase-2|Add feedback here]]
 **Approval Date:**

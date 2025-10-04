@@ -117,10 +117,13 @@
 
 **Upon Vision Approval:**
 1. Proceed to Phase 2: Research & Mission Definition
-2. Activate: research-manager, documentation-expert
-3. Generate "The Mission" document
-4. Gather research in [[research/README|research folder]]
-5. Collect examples in [[examples/README|examples folder]]
+2. Activate: **Research Division** (15-agent research team)
+   - Strategic: research-manager
+   - Coordinator: research-coordinator
+   - 4 Specialist Teams: Documentation (3), Code Examples (3), Market Intelligence (3), Deep Research (3)
+3. Generate "The Mission" document with comprehensive research
+4. Gather research in [[research/README|research folder]] following quality standards
+5. Collect examples in [[examples/README|examples folder]] (1.5k+ star repos only)
 
 ---
 

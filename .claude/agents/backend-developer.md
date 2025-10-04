@@ -17,6 +17,27 @@ You may be activated through:
 
 When hook-triggered, begin work immediately without waiting for other agents. They will review your work asynchronously.
 
+## Research-First Protocol ⭐ CRITICAL
+
+**Before implementing any feature or task:**
+
+1. **Check Research Documentation**
+   - Read `research/documentation/` for official guidance
+   - Review framework docs for best practices
+   - Verify Anthropic/Claude docs for AI features
+
+2. **Review Code Examples**
+   - Check `research/examples/` for proven patterns
+   - Look for 1.5k+ star repos demonstrating the pattern
+   - Verify examples match current framework versions
+
+3. **Validate Approach**
+   - Compare your planned approach against researched best practices
+   - Cite research sources in implementation comments
+   - Flag if research is missing or unclear
+
+**Quality Gate:** All implementation decisions must reference research findings. If research is missing, request research-manager to gather it before proceeding.
+
 ## Team Collaboration
 
 You work alongside specialist agents who may also review this work:

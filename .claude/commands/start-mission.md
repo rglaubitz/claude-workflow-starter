@@ -29,28 +29,61 @@ Create the Mission document by:
 
 1. **Read the approved Vision** at `~/.claude/projects/<project-slug>/01-vision.md`
 2. **Use the mission template** at `~/.claude/templates/phases/02-mission-template.md`
-3. **Deploy appropriate agents**:
-   - Primary: `research-manager` (technical research)
-   - Support: `documentation-expert` (gather docs)
-   - Support: Technology-specific agents based on Vision requirements:
+3. **Deploy the Research Division**:
+   - **Strategic Lead**: `research-manager` (oversees quality, coordinates with CIO)
+   - **Tactical Coordinator**: `research-coordinator` (routes to specialist teams)
+   - **4 Specialist Teams (12 agents)**:
+
+     **Documentation Team (3 agents)**:
+     - `documentation-hunter`: Official docs (Anthropic, frameworks)
+     - `api-documentation-specialist`: API specs, OpenAPI
+     - `standards-researcher`: W3C, RFCs, technical standards
+
+     **Code Examples Team (3 agents)**:
+     - `github-examples-hunter`: 1.5k+ star repos with working examples
+     - `pattern-implementation-analyst`: Extract patterns from code
+     - `code-quality-validator`: Validate licenses and quality
+
+     **Market Intelligence Team (3 agents)**:
+     - `company-researcher`: Company and product analysis
+     - `competitive-intelligence-analyst`: Alternative solutions
+     - `technical-trend-analyst`: Industry trends and best practices
+
+     **Deep Research Team (3 agents)**:
+     - `deep-researcher`: Multi-source synthesis and analysis
+     - `technical-validator`: Verify technical claims
+     - `citation-manager`: Maintain references.md with proper citations
+
+   - **Support**: Technology-specific agents as needed:
      - `frontend-developer` (if web/UI)
      - `backend-developer` (if API/services)
      - `database-architect` (if data-heavy)
      - `ai-ml-engineer` (if AI/ML features)
 
-4. **Create supporting directories**:
+4. **Create supporting directories** (enforced folder structure):
 ```bash
-mkdir -p ~/.claude/projects/<project-slug>/research
-mkdir -p ~/.claude/projects/<project-slug>/examples
+mkdir -p ~/.claude/projects/<project-slug>/research/documentation/anthropic-docs
+mkdir -p ~/.claude/projects/<project-slug>/research/documentation/framework-docs
+mkdir -p ~/.claude/projects/<project-slug>/research/documentation/api-specs
+mkdir -p ~/.claude/projects/<project-slug>/research/examples/implementation-patterns
+mkdir -p ~/.claude/projects/<project-slug>/research/examples/best-practices
+mkdir -p ~/.claude/projects/<project-slug>/research/architecture-decisions
 mkdir -p ~/.claude/projects/<project-slug>/dependencies
 ```
 
-5. **Research and document**:
-   - Technical approaches aligned with Vision goals
-   - All dependencies (npm packages, Python libraries, APIs, services)
-   - Code examples for key functionality
-   - Best practices and patterns
-   - Architecture decisions
+5. **Research and document** (enforce quality standards):
+   - **Source Quality Hierarchy**: Follow templates/research-quality-standards.md
+     - Tier 1: Official Documentation (Anthropic, Claude, framework sites) - HIGHEST PRIORITY
+     - Tier 2: Verified GitHub Repositories (1.5k+ stars minimum)
+     - Tier 3: Authoritative Technical Sources (known experts, reputable blogs)
+     - Tier 4: Official Package Registries (npm, PyPI, etc.)
+   - **Research Outputs**:
+     - Technical approaches aligned with Vision goals
+     - All dependencies with versions and justifications
+     - Code examples from 1.5k+ star repos demonstrating key patterns
+     - Best practices from authoritative sources
+     - Architecture decisions backed by research citations
+   - **Quality Gate**: Research Division enforces standards, CIO validates during Review Board
 
 6. **Create the Mission document** at:
    `~/.claude/projects/<project-slug>/02-mission.md`

@@ -14,12 +14,31 @@ You are approving **Phase 2: Mission** and unlocking **Phase 3: Execution Planni
    - If missing, tell user to run `/start-mission` first
 
 2. **Verify completeness**:
-   - All dependencies identified
-   - Research materials present
-   - Code examples gathered
-   - Technical approach documented
+   - All dependencies identified with versions and justifications
+   - Research materials present in proper folder structure
+   - Code examples gathered from 1.5k+ star repos
+   - Technical approach documented with citations
 
-3. **Update the database**:
+3. **Validate research quality** (Research-First Principle):
+```bash
+# Check folder structure exists
+ls -la ~/.claude/projects/<project-slug>/research/documentation/anthropic-docs
+ls -la ~/.claude/projects/<project-slug>/research/documentation/framework-docs
+ls -la ~/.claude/projects/<project-slug>/research/examples/implementation-patterns
+
+# Verify references.md exists and has citations
+if [ -f ~/.claude/projects/<project-slug>/research/references.md ]; then
+    echo "✅ references.md found"
+    # Check for GitHub star counts in references
+    grep -q "⭐" ~/.claude/projects/<project-slug>/research/references.md && echo "✅ GitHub repos have star counts"
+    # Check for official docs
+    grep -qi "anthropic\|claude" ~/.claude/projects/<project-slug>/research/references.md && echo "✅ Anthropic docs referenced"
+else
+    echo "⚠️  references.md missing - research quality cannot be validated"
+fi
+```
+
+4. **Update the database**:
 ```python
 import sqlite3
 from datetime import datetime
@@ -50,7 +69,7 @@ conn.commit()
 conn.close()
 ```
 
-4. **Inform the user**:
+5. **Inform the user**:
 ```
 ✅ **Phase 2 (Mission) APPROVED**
 

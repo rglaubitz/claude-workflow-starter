@@ -56,11 +56,15 @@ Located at: `projects/<slug>/research/dependencies.md`
 Located at: `projects/<slug>/research/references.md`
 
 **Validate:**
-- [ ] Official documentation linked
+- [ ] Official documentation linked (Anthropic, framework sites prioritized)
 - [ ] API documentation complete
 - [ ] Tutorial/guide resources included
 - [ ] All links valid and accessible
 - [ ] Documentation is for correct versions
+- [ ] **⭐ Source quality standards enforced:**
+  - Official docs from authoritative sources
+  - Documentation <2 years old OR validated as current
+  - All sources include URLs and dates
 
 ### 4. Code Examples
 Located at: `projects/<slug>/examples/`
@@ -72,6 +76,11 @@ Located at: `projects/<slug>/examples/`
 - [ ] Examples match our tech stack
 - [ ] UI/UX preferences documented (if applicable)
 - [ ] Design system examples included (if applicable)
+- [ ] **⭐ GitHub quality standards enforced:**
+  - All GitHub examples from repos with 1.5k+ stars
+  - Repos actively maintained (commits within 6 months)
+  - Clear licenses and documentation
+  - Source URLs and star counts documented
 
 ### 5. Architecture Decisions
 Located at: `projects/<slug>/research/architecture-decisions.md`
@@ -250,18 +259,33 @@ Identify missing:
 
 ## Quality Standards
 
-### Research Citation Requirements
-- **Official Docs**: anthropic.com, docs.claude.com, official framework docs
-- **GitHub**: Repos with 1.5k+ stars for alternatives
-- **Technical**: Verified technical blogs, RFCs, academic papers
-- **Package Info**: Official registries (npm, PyPI, Maven, etc.)
+**Comprehensive Standards:** See `templates/research-quality-standards.md` for complete guidelines.
 
-### Red Flags
-- Outdated information (>2 years old without verification)
-- Unverified sources (random blogs, forums)
-- Missing citations
-- Broken links
-- Version mismatches
+### Research Citation Requirements ⭐
+- **Official Docs** (HIGHEST PRIORITY):
+  - anthropic.com, docs.anthropic.com, claude.ai
+  - Official framework docs (react.dev, fastapi.tiangolo.com, etc.)
+  - W3C standards, RFCs
+- **GitHub**:
+  - **MINIMUM 1.5k+ stars** for code examples/alternatives
+  - Active maintenance (commits within 6 months)
+  - Clear documentation and license
+- **Technical Sources**:
+  - Verified technical leaders (Martin Fowler, Kent Beck, etc.)
+  - Reputable company blogs (Anthropic, Google Research)
+  - Peer-reviewed academic papers
+- **Package Info**:
+  - Official registries (npm, PyPI, Maven)
+  - Verified publishers only
+
+### Red Flags (AUTOMATIC REJECTION)
+- ❌ Outdated information (>2 years old without explicit validation)
+- ❌ Unverified sources (random blogs, forums)
+- ❌ GitHub repos <1.5k stars used as examples
+- ❌ Missing citations or broken links
+- ❌ Version mismatches between docs and dependencies
+- ❌ Stack Overflow as primary source (okay for error understanding only)
+- ❌ Unmaintained repos (no commits in 6+ months)
 
 ## MCP Capabilities
 
