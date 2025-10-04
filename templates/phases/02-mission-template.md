@@ -24,6 +24,29 @@
 <!-- One powerful sentence describing how we'll achieve the vision -->
 
 
+## Research Quality Standards ⭐
+
+**All research for this mission must meet these criteria:**
+- **Official Documentation First**: Anthropic, Claude, framework official sites prioritized
+- **GitHub Sources**: Minimum 1.5k+ stars for code examples and alternative approaches
+- **Currency**: Documentation <2 years old OR explicitly validated as current
+- **Citations**: All sources must include URLs and be accessible
+- **Folder Organization**: Follow structure below
+
+**Required Folder Structure:**
+```
+research/
+├── documentation/          # Official docs, guides, best practices
+│   ├── anthropic-docs/    # Claude/Anthropic official documentation
+│   ├── framework-docs/    # Framework official documentation
+│   └── api-specs/         # API specifications and standards
+├── examples/              # High-quality code samples (1.5k+ star repos)
+│   ├── implementation-patterns/
+│   └── best-practices/
+├── architecture-decisions/  # ADRs with research backing
+└── references.md          # Index of all sources with quality ratings
+```
+
 ## Technical Approach
 
 ### Architecture Overview
@@ -223,10 +246,16 @@
 ## Code Examples
 
 See [[examples/README|Examples Folder]] for:
-- Code samples demonstrating key patterns
-- Reference implementations
-- Integration examples
-- Best practices
+- Code samples from verified sources (1.5k+ star repos)
+- Reference implementations with citations
+- Integration examples from official documentation
+- Best practices from authoritative sources
+
+**Quality Requirements:**
+- All examples must include source URL and star count (if GitHub)
+- Code must be current and maintained
+- Examples must directly relate to our use case
+- License compatibility verified
 
 ## Next Steps
 

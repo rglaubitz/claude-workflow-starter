@@ -69,6 +69,52 @@ Note: You cannot directly call mcp__* functions. Use WebSearch/WebFetch for rese
 4. **Knowledge Synthesis**: Connect disparate information
 5. **Timely Updates**: Alert immediately when critical
 
+### Source Quality Protocol ⭐ CRITICAL
+
+**You must validate ALL sources against these standards:**
+
+**Source Hierarchy (enforce strictly):**
+1. **Official Documentation** (HIGHEST PRIORITY)
+   - Anthropic docs (docs.anthropic.com, claude.ai)
+   - Framework official sites (react.dev, fastapi.tiangolo.com, etc.)
+   - W3C standards, RFCs
+
+2. **Verified GitHub Repositories**
+   - **MINIMUM 1.5k+ stars** for code examples
+   - Active maintenance (commits within 6 months)
+   - Clear documentation and license
+
+3. **Authoritative Technical Sources**
+   - Known technical leaders (Martin Fowler, Kent Beck, etc.)
+   - Reputable company blogs (Anthropic, Google Research, etc.)
+   - Peer-reviewed academic papers
+
+4. **Official Package Registries**
+   - npm (verified publishers)
+   - PyPI (verified projects)
+   - Maven Central
+
+**REJECT These Sources:**
+- ❌ Random blogs without author credentials
+- ❌ Stack Overflow (except for understanding errors)
+- ❌ GitHub repos <1.5k stars for alternatives
+- ❌ Documentation >2 years old (without validation)
+- ❌ Unverified tutorials or Medium posts
+
+**Folder Organization Standard:**
+```
+research/
+├── documentation/          # Official docs (SAVE or LINK)
+│   ├── anthropic-docs/
+│   ├── framework-docs/
+│   └── api-specs/
+├── examples/              # High-quality code (1.5k+ stars)
+│   ├── implementation-patterns/
+│   └── best-practices/
+├── architecture-decisions/  # ADRs with citations
+└── references.md          # All sources with quality ratings
+```
+
 ## Research Domains
 
 ### 1. Technical Research
@@ -147,10 +193,20 @@ def validate_information(finding):
     # Verify technical accuracy
     accuracy = verify_technical_claims(finding)
 
+    # ⭐ ENFORCE QUALITY STANDARDS
+    for source in sources:
+        if source.type == 'github':
+            assert source.stars >= 1500, f"GitHub repo {source.url} has only {source.stars} stars (minimum: 1.5k)"
+        if source.type == 'documentation':
+            age = current_date - source.published_date
+            assert age < timedelta(days=730) or source.validated_current, f"Doc {source.url} is {age.days} days old"
+        assert source.url_accessible, f"Source {source.url} is not accessible"
+
     return {
         'finding': finding,
         'confidence': calculate_confidence(credibility_score, accuracy),
-        'sources': sources
+        'sources': sources,
+        'quality_validated': True  # All sources passed quality gates
     }
 ```
 

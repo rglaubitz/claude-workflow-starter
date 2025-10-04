@@ -262,6 +262,46 @@ Every Claude Code project follows a structured workflow from idea to deployment 
 7. **Patterns scoring 21+ only** (quality gate)
 8. **Clear context between sessions** (`/clear`)
 
+## Research-First Principle ⭐ CRITICAL
+
+**Foundation:** High-quality results come from high-quality research. All decisions must be grounded in current, credible, well-documented sources.
+
+### Research Quality Standards
+
+**Source Hierarchy (highest to lowest priority):**
+1. **Official Documentation** - Anthropic docs, Claude docs, framework official sites
+2. **Verified GitHub Repositories** - Minimum 1.5k+ stars for alternatives/examples
+3. **Technical Standards** - RFCs, W3C specs, academic papers from reputable institutions
+4. **Verified Technical Sources** - Known technical blogs (Martin Fowler, etc.), conference talks
+5. **Package Registries** - Official npm, PyPI, Maven with verified publishers
+
+**Source Validation Requirements:**
+- Documentation must be current (<2 years old OR explicitly verified as still valid)
+- GitHub examples must demonstrate the pattern being researched
+- All sources must include citations with URLs
+- Breaking changes and deprecations must be noted
+
+### Folder Organization Standard
+
+**Every project must follow this structure:**
+```
+research/
+├── documentation/     # Official docs, guides, best practices (saved/linked)
+├── examples/          # Code samples from high-quality sources (saved/linked)
+├── architecture-decisions/  # ADRs with research citations
+└── references.md      # Index of all sources with quality ratings
+```
+
+### Research-Before-Action Protocol
+
+**Before any agent executes a task:**
+1. Check `research/documentation/` for official guidance
+2. Review `research/examples/` for proven patterns
+3. Validate approach against research findings
+4. Reference sources in implementation decisions
+
+**Quality Gate:** CIO validates research quality during Phase 3.5 Review Board before implementation begins.
+
 ## Critical Files
 - **Team-First Principle**: See `~/.claude/README.md` for delegation approach
 - **Context Triggering**: See `~/.claude/CONTEXT-AWARE-TRIGGERING.md` for patterns

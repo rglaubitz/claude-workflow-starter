@@ -176,6 +176,24 @@ This brief is **YOUR starting point**. Fill out each section below with as much 
 **Technical Docs to Review:**
 -
 
+### Research Guidance ⭐
+<!-- Help the research team find the right sources -->
+
+**Preferred Information Sources:**
+- Official documentation URLs (if known):
+- Specific GitHub repos you've found (include star count if known):
+- Technical leaders/experts you trust in this domain:
+
+**Existing Research/Examples:**
+- Do you already have code examples? Where?
+- Have you found any good tutorials or guides? Links?
+- Are there specific patterns you want to follow?
+
+**Research Quality Standards:**
+- All sources will follow hierarchy: Official Docs > GitHub (1.5k+ stars) > Authoritative Sources
+- See `templates/research-quality-standards.md` for full standards
+- Research will be organized in structured folders for easy reference
+
 ---
 
 ## 6. User Experience & Design
