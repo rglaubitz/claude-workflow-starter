@@ -139,6 +139,39 @@ User can monitor progress:
 - `/workflow-dashboard` - Overall progress
 - View: `projects/<project-slug>/04-implementation-report.md`
 
+## Context Management During Implementation
+
+Long-running implementations require context management to prevent token overflow:
+
+```python
+# Track task completion count
+completed_tasks = cursor.execute("""
+    SELECT COUNT(*) FROM tasks WHERE status = 'completed'
+""").fetchone()[0]
+
+# Every 50 tasks, recommend context compaction
+if completed_tasks > 0 and completed_tasks % 50 == 0:
+    print(f"⚠️ Context Management Recommended")
+    print(f"")
+    print(f"   Completed: {completed_tasks} tasks")
+    print(f"   Status: Context window may be filling")
+    print(f"")
+    print(f"   Recommendation: /compact")
+    print(f"")
+    print(f"   This will:")
+    print(f"     - Summarize progress to date")
+    print(f"     - Clear context window")
+    print(f"     - Save summary to: agent-notes/phase-4-summary-{datetime.now().strftime('%Y%m%d')}.md")
+    print(f"     - Continue with fresh context")
+    print(f"")
+```
+
+**Compaction Strategy:**
+- Trigger every 50 completed tasks (configurable)
+- Preserves task state in database (persistent)
+- Creates dated summary documents for reference
+- Frees context for remaining implementation work
+
 ## When All Tasks Complete
 
 Tell the user:
