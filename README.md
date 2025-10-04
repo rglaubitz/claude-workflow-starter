@@ -1,18 +1,21 @@
 # Claude 5-Phase Workflow Starter
 
-> **A complete, production-ready workflow system for Claude Code projects**
+> **The workflow infrastructure for Claude Code projects**
 
-Transform your Claude Code experience with a structured 5-phase workflow, 32 specialized AI agents, and a C-suite Review Board. This starter kit provides everything you need to build professional-grade projects from concept to deployment.
+Transform your Claude Code experience with a structured 5-phase workflow and C-suite Review Board. This system provides the templates, commands, and scripts to orchestrate professional-grade projects from concept to deployment.
+
+> **Looking for specialist agents?** See [claude-agents](https://github.com/rglaubitz/claude-agents) - 42+ agents to import as needed
+>
+> **Architecture details:** See [ARCHITECTURE.md](./ARCHITECTURE.md)
 
 ## 🎯 What You Get
 
 - **5-Phase Workflow System**: Vision → Mission → Execution Planning → Review Board → Implementation → Testing
-- **32 Specialized Agents**: From database architects to security auditors
-- **C-Suite Review Board**: CIO, CTO, and COO validate plans before implementation
+- **3 C-Suite Agents**: CIO, CTO, and COO (Review Board executives)
+- **42+ Specialist Agents**: Import from [claude-agents](https://github.com/rglaubitz/claude-agents) library as needed
 - **20 Slash Commands**: Full workflow orchestration at your fingertips
 - **6 Phase Templates**: Professional documentation from day one
 - **Automation Scripts**: Database initialization, health checks, workflow coordination
-- **Constitution System**: Agent governance and quality standards
 - **MCP Server Support**: Memory and knowledge persistence
 
 ## 🚀 Quick Start
@@ -89,32 +92,38 @@ Every project follows a structured path with explicit approval gates:
 - Validate against Vision goals
 - **Command**: `/start-testing` → `/approve-testing`
 
-### The Agent Roster (32 Specialists)
+### C-Suite Review Board (Included)
 
-**Executive Leadership (3 C-suite)**
-- **CIO**: Intelligence, research quality, dependencies
-- **CTO**: Technical architecture, code quality, APIs
-- **COO**: Operations, goals, UX/UI, beauty
+**Executive Leadership (3 agents):**
+- **CIO** - Intelligence, research quality, dependencies
+- **CTO** - Technical architecture, code quality, APIs
+- **COO** - Operations, goals, UX/UI, beauty
 
-**Orchestration & Planning (4 agents)**
-- task-manager, project-task-planner, prd-expert, agent-architecture-designer
+These 3 C-suite agents are included as they're integral to the Review Board (Phase 3.5) workflow.
 
-**Core Development (6 agents)**
-- database-architect, graph-database-specialist, ai-ml-engineer
-- frontend-developer, backend-developer, devops-engineer
+### Specialist Agents (Import from Library)
 
-**Quality Assurance (4 agents)**
-- security-auditor, performance-engineer, accessibility-specialist, qa-engineer
+**42+ specialist agents** are available in the [claude-agents](https://github.com/rglaubitz/claude-agents) library. During Phase 3 (Execution Planning), you'll identify which agents your project needs and import them.
 
-**Code Review & Validation (4 agents)**
-- code-review-expert, database-reviewer, frontend-reviewer, backend-reviewer
+**Agent Categories:**
+- **Orchestration (4):** task-manager, project-task-planner, prd-expert, agent-architecture-designer
+- **Development (6):** database-architect, graph-database-specialist, ai-ml-engineer, frontend-developer, backend-developer, devops-engineer
+- **Quality (4):** security-auditor, performance-engineer, accessibility-specialist, qa-engineer
+- **Research (17):** research-manager, deep-researcher, documentation-expert, + 14 specialists ⭐
+- **Review (4):** code-review-expert, database-reviewer, frontend-reviewer, backend-reviewer
+- **Support (7):** api-architect, ui-ux-designer, data-pipeline-engineer, knowledge-graph-engineer, sql-specialist, integration-specialist, mcp-bridge-engineer
 
-**Specialized Support (7 agents)**
-- api-architect, ui-ux-designer, data-pipeline-engineer
-- knowledge-graph-engineer, sql-specialist, integration-specialist, mcp-bridge-engineer
+**You don't need all 42** - import only what your project requires.
 
-**Research & Documentation (4 agents)**
-- research-manager, documentation-expert, agent-testing-engineer, memory-system-engineer
+**Example:** Web app might need:
+```bash
+# From claude-agents library
+cp ~/claude-agents/orchestration/task-manager.md ~/.claude/projects/my-app/agents/
+cp ~/claude-agents/development/backend-developer.md ~/.claude/projects/my-app/agents/
+cp ~/claude-agents/development/frontend-developer.md ~/.claude/projects/my-app/agents/
+```
+
+See [ARCHITECTURE.md](./ARCHITECTURE.md) for agent import strategies.
 
 ## 🛠️ Installation
 
