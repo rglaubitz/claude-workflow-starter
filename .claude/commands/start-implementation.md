@@ -35,11 +35,38 @@ Begin implementation by:
 
 2. **Use implementation template** at `~/.claude/templates/phases/04-implementation-report-template.md`
 
-3. **Deploy the task-manager orchestrator**:
-   - Primary: `task-manager` (coordinates all implementation work)
-   - The task-manager will deploy other agents based on Execution Plan assignments
+3. **Deploy the execution-director field commander**:
+   - Primary: `execution-director` (commands 7 agent teams during Phase 4)
+   - Support: `delivery-coordinator`, `quality-enforcer`, `blocker-resolver`, `progress-tracker`
+   - The execution-director orchestrates tactical implementation with real-time decision making
 
-4. **Load tasks from database**:
+4. **Initialize Phase 4 communication infrastructure**:
+```bash
+echo "🔧 Initializing execution team communication infrastructure..."
+
+# Create 10 SQLite tables for Phase 4 coordination
+python3 ~/.claude/scripts/execution-coordinator.py init "$PROJECT_SLUG"
+
+# Verify infrastructure ready
+echo ""
+echo "📊 Verifying communication infrastructure..."
+python3 ~/.claude/scripts/execution-coordinator.py health "$PROJECT_SLUG"
+
+echo ""
+echo "✅ Phase 4 infrastructure initialized:"
+echo "   - agent_messages (inter-agent communication)"
+echo "   - handoff_log (team handoffs)"
+echo "   - quality_gates (gate enforcement)"
+echo "   - sop_compliance (SOP tracking)"
+echo "   - blockers (blocker resolution)"
+echo "   - blocker_patterns (learning)"
+echo "   - team_status (7 teams initialized)"
+echo "   - review_deployments (review tracking)"
+echo "   - team_sync_log (sync tracking)"
+echo "   - tactical_decisions (execution-director decisions)"
+```
+
+5. **Load tasks from database**:
 ```python
 cursor.execute("""
     SELECT id, description, assigned_agent, dependencies, status
@@ -62,10 +89,10 @@ for task_id, description, agent, deps, status in tasks:
     })
 ```
 
-5. **Create Implementation Report** at:
+6. **Create Implementation Report** at:
    `~/.claude/projects/<project-slug>/04-implementation-report.md`
 
-6. **Begin task execution**:
+7. **Begin task execution**:
    - Work through tasks in dependency order
    - Use TodoWrite to track real-time progress
    - Update Implementation Report as work completes
@@ -87,13 +114,14 @@ For each task:
 
 ## When Tasks Are Running
 
-The `task-manager` will:
-- Coordinate agent work
-- Track progress in real-time
-- Update Implementation Report
-- Handle dependencies
-- Escalate blockers
-- Ensure quality gates are met
+The `execution-director` will:
+- Command 7 agent teams (Foundation, Backend, Frontend, Research, Quality, Integration, Orchestration)
+- Deploy delivery-coordinator for team handoffs
+- Deploy quality-enforcer for gate enforcement with blocking authority
+- Deploy blocker-resolver for 5-level escalation (L1→L5)
+- Deploy progress-tracker for war room dashboard with 6 KPIs
+- Make tactical decisions in real-time
+- Coordinate all implementation work
 
 User can monitor progress:
 - `/phase-status` - Current task status
@@ -153,4 +181,5 @@ cursor.execute("""
 - Code review every significant change
 - Update Implementation Report regularly (daily or per-task)
 - Don't rush - quality over speed
-- The task-manager is the orchestrator - let it coordinate
+- The execution-director is the field commander - let it orchestrate
+- Trust the execution support team (delivery-coordinator, quality-enforcer, blocker-resolver, progress-tracker)
